@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "landing-zone"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "Checks if a user input reaches a specified function; requires gdb"
 authors = ["bluesentinelsec <bluesentinel@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "landing_zone"}]
@@ -15,3 +15,10 @@ pygdbmi = "^0.11.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+packages = [
+    { include = "landing_zone" },
+]
+
+[tool.poetry.scripts]
+landing-zone = "landing_zone.main:main"
