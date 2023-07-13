@@ -1,0 +1,15 @@
+# the target application
+target: "testApplication/testApp"
+
+# arguments to pass to target
+arguments:
+  - "1"
+  - "2"
+  - "3"
+  - "999"
+
+# the functions you would like to check for execution
+functions:
+  - "mock_CVE_2023_0466"
+  - "mock_CVE_2023_0215"
+  - "mock_CVE_2022_4450"

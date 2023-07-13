@@ -8,6 +8,8 @@ packages = [{include = "landing_zone"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pyyaml = "^6.0"
+pygdbmi = "^0.11.0.0"
 
 
 [build-system]
