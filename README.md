@@ -1,12 +1,17 @@
 # Landing Zone
 
+Have you ever wondered if attackers could **actually** reach a vulnerable section of code?
+
 Landing Zone is a proof of concept tool that checks if specific user inputs can lead to execution of known-vulnerable
 functions.
 
 Example use cases:
 
-- you are an exploit researcher trying to determine if a list of inputs can lead to a vulnerable function
-- you are a vulnerability management practioner who wants to varify that your security controls can prevent specific
+- You are an exploit researcher trying to determine if a list of inputs can lead to a vulnerable function.
+- You are a security engineer who has a vulnerable application but no patches are available. You want to know if your
+  users or attackers can reach the vulnerable code.
+- You are a vulnerability management practitioner who wants to **prove** that your security controls can prevent
+  specific
   inputs from reaching known-vulnerable functions in an application.
 
 This tool was created to satisfy classwork for Dakota State University's CSC-842 Security Tool Development.
@@ -21,9 +26,11 @@ You must have the following software installed prior to using this tool:
 - Pip3
 - GNU Debugger
 
+At this time we only support GNU/Linux-based operating systems.
+
 ## Usage
 
-**Installation**
+**1. Installation**
 
 ```bash
 pip install landing-zone
@@ -31,7 +38,7 @@ pip install landing-zone
 landing-zone --help
 ```
 
-**Create a config file to test your application**
+**2. Create a config file to test your application**
 
 ```bash
 vim conf.yaml
@@ -55,13 +62,13 @@ functions:
   - "mock_CVE_2022_4450"
 ```
 
-**Scan Application**
+**3. Analyze Application**
 
 ```bash
 landing-zone --conf conf.yaml
 ```
 
-Example Output:
+**Example Output**:
 
 ```
 INFO:root:reading config file: 'conf.yaml'
@@ -80,6 +87,6 @@ testApp.c:63:main
 
 If I were to maintain this program going forward, I would:
 
-- allow breaking on functions specified as regular expressions
-- allow conditional break points
+- support regular expressions for functions listed in conf file
+- allow conditional break points (i.e. only alert if one or more conditions are true)
 - support additional debuggers such as lldb and windbg
