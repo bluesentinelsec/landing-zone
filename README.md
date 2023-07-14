@@ -16,7 +16,7 @@ Example use cases:
 
 This tool was created to satisfy classwork for Dakota State University's CSC-842 Security Tool Development.
 
-Demo video: [here]()
+Demo video: [here](https://youtu.be/ldza1PJ1kkg)
 
 ## Prerequisites
 
